@@ -13,14 +13,14 @@
     <nav>
       <div class="nav-wrapper">
         <%= link_to("charles milam", "#" , class: "brand-logo") %>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-        <ul class="right hide-on-med-and-down"  id="nav-mobile">
+        <a href="#" data-activates="nav-med-down" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        <ul class="right hide-on-med-and-down"  id="nav-large">
           <li><%= link_to("about me", "#") %></li>
           <li><%= link_to("portfolio", "#") %></li>
           <li><%= link_to("resume", "#") %></li>
           <li><%= link_to("contact", "#") %></li>
         </ul>
-        <ul class="side-nav" id="mobile-demo">
+        <ul class="side-nav" id="nav-med-down">
           <li><%= link_to("about me", "#") %></li>
           <li><%= link_to("portfolio", "#") %></li>
           <li><%= link_to("resume", "#") %></li>
@@ -29,7 +29,7 @@
       </div>
     </nav>
   </div>
-  <div class="flash-container">
+  <div class="flash container">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </div>
