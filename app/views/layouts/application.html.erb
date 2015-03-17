@@ -9,26 +9,7 @@
 <body>
 
 <header>
-  <div class="navbar-container">
-    <nav>
-      <div class="nav-wrapper">
-        <%= link_to("charles milam", root_path , class: "brand-logo") %>
-        <a href="#" data-activates="nav-med-down" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-        <ul class="right hide-on-med-and-down"  id="nav-large">
-          <li><%= link_to("about me", root_path) %></li>
-          <li><%= link_to("portfolio", "#") %></li>
-          <li><%= link_to("resume", pages_resume_path) %></li>
-          <li><%= link_to("contact", pages_contact_path) %></li>
-        </ul>
-        <ul class="side-nav" id="nav-med-down">
-          <li><%= link_to("about me", root_path) %></li>
-          <li><%= link_to("portfolio", "#") %></li>
-          <li><%= link_to("resume", pages_resume_path) %></li>
-          <li><%= link_to("contact", pages_contact_path) %></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+  <%= render "layouts/navbar" %>
   <div class="flash container">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

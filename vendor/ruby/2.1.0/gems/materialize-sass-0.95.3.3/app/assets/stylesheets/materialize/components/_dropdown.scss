@@ -16,7 +16,7 @@
   li {
     cursor: pointer;
     font-size: 1.2rem;
-    color: $off-black;
+    color: $primaryTextColor; //$off-black;
     line-height: 1.5rem;
 
     &:hover, &.active {

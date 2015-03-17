@@ -11,7 +11,8 @@ $primaryTextColor:   #212121;
 $secondaryTextColor: #727272;
 $dividerColor:       #B6B6B6;
 ***/
-$textPrimaryColor:   #FFFFFF;
+$primaryTextColor:   #212121;
+$lightPrimaryColor:  #C8E6C9;
 
 $primary-color: #4CAF50 !default;
 $primary-color-light: #C8E6C9 !default;
@@ -107,8 +108,8 @@ $element-top-margin: $gutter-width/3 !default;
 $element-bottom-margin: ($gutter-width*2)/3 !default;
 
 /*** Navbar ***/
-$navbar-height: 64px !default;
-$navbar-height-mobile: 56px !default;
+$navbar-height: 134px !default;
+$navbar-height-mobile: 116px !default;
 
 
 /*** SideNav ***/
@@ -129,7 +130,7 @@ $toast-color: #323232 !default;
 $toast-text-color: #fff !default;
 
 /*** Typography ***/
-$off-black: #212121; /*** rgba(0, 0, 0, 0.87) !default; ***/
+$primaryTextColor: #212121; //$off-black: #212121; /*** rgba(0, 0, 0, 0.87) !default; ***/
 // Header Styles
 $h1-fontsize: 4.2rem !default;
 $h2-fontsize: 3.56rem !default;

@@ -24,7 +24,7 @@
   }
 
   ul.slides {
-    background-color: color('grey', 'base');
+    background-color: $lightPrimaryColor; //color('grey', 'base');
     margin: 0;
     height: 400px;
 
@@ -78,7 +78,7 @@
       height: 16px;
       width: 16px;
       margin: 0 12px;
-      background-color: color('grey', 'lighten-2');
+      background-color: $lightPrimaryColor; //color('grey', 'lighten-2');
 
       @include transition(background-color .3s);
       @include border-radius(50%);
