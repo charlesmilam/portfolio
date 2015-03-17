@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Portfolio</title>
+  <title>charles milam - portfolio</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -9,14 +9,26 @@
 <body>
 
 <header>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <%= render "layouts/navbar" %>
+  <div class="flash container">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
 </header>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
 <footer>
-  
+  <div class="container">
+    <div class="divider"></div>
+  </div>
 </footer>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".button-collapse").sideNav()
+  })
+</script>
 </body>
 </html>
