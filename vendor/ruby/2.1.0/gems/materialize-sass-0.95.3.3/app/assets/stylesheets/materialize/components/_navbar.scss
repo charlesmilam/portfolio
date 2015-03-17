@@ -25,11 +25,11 @@ nav {
 
   // Collapse button
   a.button-collapse {
-    float: left;
+    float: right;
     position: relative;
     z-index: 1;
     height: $navbar-height-mobile;
-    color: #fff;
+    color: #FFC107;
 
     i {
 
@@ -43,7 +43,7 @@ nav {
   // Logo
   .brand-logo {
     position: absolute;
-    color: #fff;
+    color: #FFF;
     display: inline-block;
     font-size: 2.1rem;
     padding: 0;
@@ -73,7 +73,7 @@ nav {
 
     li {
       @include transition(background-color .3s);
-      float: left;
+      float: right;
       padding: 0px;
 
       &:hover, &.active {
@@ -87,8 +87,8 @@ nav {
       padding: 0px 15px;
     }
 
-    &.left {
-      float: left;
+    &.right {
+      float: right;
     }
   }
 
