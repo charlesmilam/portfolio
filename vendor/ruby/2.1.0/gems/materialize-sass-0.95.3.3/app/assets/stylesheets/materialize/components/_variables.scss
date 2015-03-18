@@ -1,7 +1,5 @@
 /*** Colors ***/
-/*** Pallete from material pallete, colors immediately blow this
-      block have been moved out of this pallete for use.
-
+/*** Pallete from material pallete, colors immediately below this ***/
 $darkPrimaryColor:   #388E3C;
 $primaryColor:       #4CAF50;
 $lightPrimaryColor:  #C8E6C9;
@@ -10,14 +8,11 @@ $accentColor:        #FFC107;
 $primaryTextColor:   #212121;
 $secondaryTextColor: #727272;
 $dividerColor:       #B6B6B6;
-***/
-$primaryTextColor:   #212121;
-$lightPrimaryColor:  #C8E6C9;
 
-$primary-color: #4CAF50 !default;
-$primary-color-light: #C8E6C9 !default;
-$primary-color-dark: #388E3C !default;
-
+/* Colors from materialize, some modified with pallete colors */
+$primary-color: #4CAF50 !default; // modified from original
+$primary-color-light: #C8E6C9 !default; // modified from original
+$primary-color-dark: #388E3C !default; // modified from original
 $secondary-color: #FFC107 !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
@@ -50,7 +45,7 @@ $collapsible-border-color: #ddd !default;
 
 
 /*** Dropdown ***/
-$dropdown-color: $secondary-color !default;
+$dropdown-color: $darkPrimaryColor !default; //$secondary-color !default;
 
 /*** Fonts ***/
 $roboto-font-path: "roboto/" !default;

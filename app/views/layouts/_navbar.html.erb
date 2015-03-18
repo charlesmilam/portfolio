@@ -1,25 +1,53 @@
 <div class="navbar-container">
+  <!-- admin dropdown -->
+  <ul class="dropdown-content" id="adminDD">
+    <% if admin_signed_in? %>
+      <li><%= link_to("add new project", "#") %></li>
+      <li><%= link_to("view all project", "#") %></li>
+      <li class="divider"></li>
+      <li><%= link_to("sign out", destroy_admin_session_path) %></li>
+    <% else %>
+      <li><%= link_to("sign in", new_admin_session_path) %></li>
+    <% end %>
+  </ul>
   <nav>
     <div class="nav-wrapper">
+      <!-- logo -->
       <%= link_to(root_path , class: "brand-logo") do %>
         <%= image_tag("me.jpg") %>
         <span>charles milam</span>
       <% end %>
 
-      <a href="#" data-activates="nav-med-down" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <!-- hamburger on smaller screens -->
+      <%= link_to("#" , class: "button-collapse", data: {activates: "nav-med-down"}) do %>
+        <i class="mdi-navigation-menu"></i>
+      <% end %>
+
+      <!-- nav links - big screen -->
       <ul class="right hide-on-med-and-down"  id="nav-large">
         <li><%= link_to("about me", root_path) %></li>
         <li><%= link_to("portfolio", "#") %></li>
         <li><%= link_to("resume", pages_resume_path) %></li>
         <li><%= link_to("contact", pages_contact_path) %></li>
-        <li><%= link_to("admin", "#") %></li>
+        <li>
+          <%= link_to("#!", class: "dropdown-button", data: {activates: "adminDD"} ) do %>
+            <span>admin</span>
+            <i class="mdi-navigation-arrow-drop-down right"></i>
+          <% end %>
+        </li>
       </ul>
+      <!-- nav links - smaller screen -->
       <ul class="side-nav" id="nav-med-down">
         <li><%= link_to("about me", root_path) %></li>
         <li><%= link_to("portfolio", "#") %></li>
         <li><%= link_to("resume", pages_resume_path) %></li>
         <li><%= link_to("contact", pages_contact_path) %></li>
-        <li><%= link_to("admin", "#") %></li>
+        <li>
+          <%= link_to("#!", class: "dropdown-button", data: {activates: "adminDD"} ) do %>
+            <span>admin</span>
+            <i class="mdi-navigation-arrow-drop-down right"></i>
+          <% end %>
+        </li>
       </ul>
     </div>
   </nav>
