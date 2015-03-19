@@ -3,9 +3,9 @@
   <ul class="dropdown-content" id="adminDD">
     <% if admin_signed_in? %>
       <li><%= link_to("add new project", "#") %></li>
-      <li><%= link_to("view all project", "#") %></li>
+      <li><%= link_to("view all projects", "#") %></li>
       <li class="divider"></li>
-      <li><%= link_to("sign out", destroy_admin_session_path) %></li>
+      <li><%= link_to("sign out", destroy_admin_session_path, method: :delete) %></li>
     <% else %>
       <li><%= link_to("sign in", new_admin_session_path) %></li>
     <% end %>
