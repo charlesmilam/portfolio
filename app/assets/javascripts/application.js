@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require materialize-sprockets
+//= require materialize/js/date_picker/picker
+//= require materialize/js/date_picker/picker.date
+//= require_tree ../../../vendor/assets/components/materialize/js
