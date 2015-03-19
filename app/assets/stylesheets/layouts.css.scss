@@ -10,12 +10,5 @@
 
 .dropdown-content {
   min-width: 200px;
-  li {
-    & > a, & > span {
-      display: block;
-      padding: 1rem 1rem;
-      color: $darkPrimaryColor;
-    }
-  }
 }
 
