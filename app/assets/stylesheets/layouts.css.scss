@@ -1,4 +1,6 @@
-
+@import "materialize/sass/materialize";
+@import "materialize/sass/components/navbar";
+@import "palette";
 
 .nav-wrapper img {
   height: 100px;
@@ -7,6 +9,6 @@
   vertical-align: middle;
 }
 
-@_navbar nav {
-  background-color: #212121;
+nav {
+  background-color: $primaryColor;
 }
