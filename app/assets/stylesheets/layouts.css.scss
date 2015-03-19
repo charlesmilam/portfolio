@@ -8,9 +8,14 @@
   vertical-align: middle;
 }
 
-nav {
-  span {
-    margin-bottom: 70px;
+.dropdown-content {
+  min-width: 200px;
+  li {
+    & > a, & > span {
+      display: block;
+      padding: 1rem 1rem;
+      color: $darkPrimaryColor;
+    }
   }
 }
 
