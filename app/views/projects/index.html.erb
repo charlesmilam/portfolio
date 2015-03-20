@@ -1,6 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Projects</h1>
+<h1>Recent Projects</h1>
+
+<div class="row">
+  
+    <% @projects.each do |project| %>
+    <div class="col s12 l6">
+      <div class="card medium">
+        <div class="card-image">
+        <%= image_tag("test1.png") %>
+        </div>
+        <div class="card-content">
+          
+        </div>
+        <div class="card-action">
+
+        </div>
+      </div>
+      </div>
+    <% end %>
+  
+</div>
 
 <table>
   <thead>
@@ -23,13 +43,18 @@
         <td><%= project.repo %></td>
         <td><%= project.status %></td>
         <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- show these links only if admin -->
+        <% if admin_signed_in? %>
+          <td><%= link_to 'Edit', edit_project_path(project) %></td>
+          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Project', new_project_path %>
+ <!-- only show to admins -->
+ <% if admin_signed_in? %>
+  <%= link_to 'New Project', new_project_path %>
+<% end %>
