@@ -3,61 +3,30 @@
 <h1>Recent Projects</h1>
 
 <div class="row">
-  
-    <% @projects.each do |project| %>
-      <div class="col s12 l6">
-        <div class="card medium">
-          <div class="card-image activator">
-            <%= image_tag(project.image) %>
-          </div>
-          <div class="card-content">
-            <span class="card-title activator black-text lighten-2"><%= project.name %><i class="mdi-navigation-more-vert right"></i></span>
-          </div>
-           <div class="card-reveal">
-            <span class="card-title black-text lighten-2"><%= project.name %><i class="mdi-navigation-close right"></i></span>
-            <p><%= project.about %></p>
-          </div>
-          <div class="card-action">
-
-          </div>
+  <% @projects.each do |project| %>
+    <div class="col s12 l6">
+      <div class="card medium">
+        <div class="card-image activator">
+          <%= image_tag(project.image) %>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator black-text lighten-2"><%= project.name %><i class="mdi-navigation-more-vert right"></i></span>
+        </div>
+         <div class="card-reveal">
+          <span class="card-title black-text lighten-2"><%= project.name %><i class="mdi-navigation-close right"></i></span>
+          <p><%= project.about %></p>
+        </div>
+        <div class="card-action">
+          <%= link_to("Click here", project.repo, target: "_blank") %>for this project's Github repo.<br>
+          <% if admin_signed_in? %>
+            <%= link_to("Edit this project", edit_project_path(project)) %>
+          <% end %>
         </div>
       </div>
-    <% end %>
-  
+    </div>
+  <% end %>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>About</th>
-      <th>Dev date</th>
-      <th>Repo</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.about %></td>
-        <td><%= project.dev_date %></td>
-        <td><%= project.repo %></td>
-        <td><%= project.status %></td>
-        <td><%= link_to 'Show', project %></td>
-        <!-- show these links only if admin -->
-        <% if admin_signed_in? %>
-          <td><%= link_to 'Edit', edit_project_path(project) %></td>
-          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
  <!-- only show to admins -->
  <% if admin_signed_in? %>
   <%= link_to 'New Project', new_project_path %>
