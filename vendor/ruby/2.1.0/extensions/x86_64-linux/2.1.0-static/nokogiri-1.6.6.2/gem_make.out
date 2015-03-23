@@ -252,5 +252,5 @@ rmdir -p /home/scruffy/git/portfolio/vendor/ruby/2.1.0/gems/nokogiri-1.6.6.2/ext
 rm -rf /home/scruffy/git/portfolio/vendor/ruby/2.1.0/gems/nokogiri-1.6.6.2/ports
 
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20150316-5106-1wozorl/nokogiri
+/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20150323-12238-1qqcgsu/nokogiri
 installing default nokogiri libraries

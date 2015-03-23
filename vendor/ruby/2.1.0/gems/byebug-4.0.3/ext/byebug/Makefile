@@ -30,8 +30,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20150323-12238-lkbyoc
-sitelibdir = $(DESTDIR)./.gem.20150323-12238-lkbyoc
+sitearchdir = $(DESTDIR)./.gem.20150323-12238-1qpjlda
+sitelibdir = $(DESTDIR)./.gem.20150323-12238-1qpjlda
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -78,7 +78,7 @@ optflags = -O3 -fno-fast-math
 debugflags = -ggdb3
 warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration
 CCDLFLAGS = -fPIC
-CFLAGS   = $(CCDLFLAGS) $(cflags) $(ARCH_FLAG)
+CFLAGS   = $(CCDLFLAGS) $(cflags) -Wall -Werror $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
 CPPFLAGS =  -I/home/scruffy/.rbenv/versions/2.1.3/include  $(DEFS) $(cppflags)
@@ -130,15 +130,15 @@ DISTCLEANDIRS =
 
 extout = 
 extout_prefix = 
-target_prefix = 
+target_prefix = /byebug
 LOCAL_LIBS = 
 LIBS =   -lpthread -ldl -lcrypt -lm   -lc
-ORIG_SRCS = bcrypt_ext.c crypt.c crypt_gensalt.c crypt_blowfish.c wrapper.c
+ORIG_SRCS = locker.c context.c byebug.c threads.c breakpoint.c
 SRCS = $(ORIG_SRCS) 
-OBJS = bcrypt_ext.o crypt.o crypt_gensalt.o crypt_blowfish.o wrapper.o
-HDRS = $(srcdir)/ow-crypt.h $(srcdir)/crypt.h
-TARGET = bcrypt_ext
-TARGET_NAME = bcrypt_ext
+OBJS = locker.o context.o byebug.o threads.o breakpoint.o
+HDRS = $(srcdir)/byebug.h
+TARGET = byebug
+TARGET_NAME = byebug
 TARGET_ENTRY = Init_$(TARGET_NAME)
 DLLIB = $(TARGET).so
 EXTSTATIC = 
@@ -180,7 +180,7 @@ distclean: clean distclean-so distclean-static distclean-rb-default distclean-rb
 realclean: distclean
 install: install-so install-rb
 
-install-so: $(DLLIB) $(TIMESTAMP_DIR)/.RUBYARCHDIR.time
+install-so: $(DLLIB) $(TIMESTAMP_DIR)/.RUBYARCHDIR.-.byebug.time
 	$(INSTALL_PROG) $(DLLIB) $(RUBYARCHDIR)
 clean-static::
 	-$(Q)$(RM) $(STATIC_LIB)
@@ -189,8 +189,8 @@ install-rb-default: pre-install-rb-default
 pre-install-rb: Makefile
 pre-install-rb-default: Makefile
 pre-install-rb-default:
-	$(ECHO) installing default bcrypt_ext libraries
-$(TIMESTAMP_DIR)/.RUBYARCHDIR.time:
+	$(ECHO) installing default byebug libraries
+$(TIMESTAMP_DIR)/.RUBYARCHDIR.-.byebug.time:
 	$(Q) $(MAKEDIRS) $(@D) $(RUBYARCHDIR)
 	$(Q) $(TOUCH) $@
 
@@ -229,7 +229,7 @@ site-install-rb: install-rb
 	$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -c $<
 
 $(DLLIB): $(OBJS) Makefile
-	$(ECHO) linking shared-object $(DLLIB)
+	$(ECHO) linking shared-object byebug/$(DLLIB)
 	-$(Q)$(RM) $(@)
 	$(Q) $(LDSHARED) -o $@ $(OBJS) $(LIBPATH) $(DLDFLAGS) $(LOCAL_LIBS) $(LIBS)
 
