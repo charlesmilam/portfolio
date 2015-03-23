@@ -18,6 +18,7 @@
         </div>
         <div class="card-action">
           <%= link_to("github repository", project.repo, target: "_blank") %><br>
+          <%= link_to("project website", project.url , target: "_blank") %><br>
           <% if admin_signed_in? %>
             <%= link_to("Edit this project", edit_project_path(project)) %>
           <% end %>
