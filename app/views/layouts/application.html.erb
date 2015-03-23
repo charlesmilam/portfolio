@@ -27,6 +27,7 @@
 </footer>
 <script type="text/javascript">
   $(document).ready(function(){
+    // init the various materialize js needed for components.
     $(".button-collapse").sideNav()
     $('.dropdown-button').dropdown({
       inDuration: 300,
@@ -37,6 +38,9 @@
       gutter: 0, // Spacing from edge
       belowOrigin: true // Displays dropdown below the button
     })
+    $('.collapsible').collapsible({
+      accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
   })
 </script>
 </body>
