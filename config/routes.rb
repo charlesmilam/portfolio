@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   # General static pages
   get 'pages/resume'
+  get "pages/pdf"
   get 'pages/contact'
 
   # Example of regular route:
