@@ -10,14 +10,14 @@
           <%= image_tag(project.image, class: "activator") %>
         </div>
         <div class="card-content">
-          <span class="card-title activator black-text lighten-2"><%= project.name %><i class="mdi-navigation-more-vert right"></i></span>
+          <span class="card-title activator white-text"><%= project.name %><i class="mdi-navigation-more-vert right"></i></span>
         </div>
          <div class="card-reveal">
-          <span class="card-title black-text lighten-2"><%= project.name %><i class="mdi-navigation-close right"></i></span>
+          <span class="card-title white-text"><%= project.name %><i class="mdi-navigation-close right"></i></span>
           <p><%= project.about %></p>
         </div>
         <div class="card-action">
-          <%= link_to("Click here", project.repo, target: "_blank") %>for this project's Github repo.<br>
+          <%= link_to("github repository", project.repo, target: "_blank") %><br>
           <% if admin_signed_in? %>
             <%= link_to("Edit this project", edit_project_path(project)) %>
           <% end %>
