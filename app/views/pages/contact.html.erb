@@ -1,2 +1,44 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<div class="header">
+  <h1>Contact</h1>
+</div>
+<div class="section">
+  <div class="row">
+    <div class="col s4">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">LinkedIn</span>
+          <p>
+            You can reach me at LinkedIn via the link below.
+          </p>
+          <div class="card-action">
+            <%= link_to("linkedin", "https://www.linkedin.com/in/charlesmilam" , target: "_blank") %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Twitter</span>
+          <p>
+            You can reach me via Twitter via the link below.
+          </p>
+          <div class="card-action">
+            <%= link_to("twitter", "https://twitter.com/chrlsmlm" , target: "_blank") %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Email</span>
+          <p>
+            You can reach me @ Gmail, and my address is my first and last name seperated by a dot.
+          </p>
+          <div class="card-action"></div>
+        </div>
+      </div>
+    </div>
+  </div>   
+</div>
