@@ -14,7 +14,7 @@
         </div>
          <div class="card-reveal">
           <span class="card-title black-text lighten-2"><%= project.name %><i class="mdi-navigation-close right"></i></span>
-          <p><%= project.about %></p>
+          <p><%= simple_format(project.about) %></p>
         </div>
         <div class="card-action">
           <%= link_to("github repository", project.repo, target: "_blank") %><br>
