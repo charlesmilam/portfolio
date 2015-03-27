@@ -29,6 +29,11 @@
   <%= @project.status %>
 </p>
 
+<p>
+  <strong>Sort</strong>
+  <%= @project.sort %>
+</p>
+
 <!-- only allow admins to see edit link -->
 <% if admin_signed_in? %>
   <%= link_to 'Edit', edit_project_path(@project) %> |
