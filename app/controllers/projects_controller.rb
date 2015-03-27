@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.all.order(:sort)
   end
 
   # GET /projects/1
@@ -70,6 +70,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :about, :dev_date, :repo, :url, :status, :image)
+      params.require(:project).permit(:name, :about, :dev_date, :repo, :url, :status, :sort, :image)
     end
 end
