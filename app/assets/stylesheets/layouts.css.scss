@@ -12,3 +12,14 @@
   min-width: 200px;
 }
 
+#logo-name {
+  font-size: 1.1rem;
+  
+  @media #{$large-and-up} {
+    margin-left: 120px;
+  }
+
+  @media #{$medium-and-down} {
+    display: none;
+  }
+}
